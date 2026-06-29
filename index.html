@@ -1,1 +1,259 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roma Bankowski — Contemporary Abstract Art</title>
+<meta name="description" content="Roma Bankowski is a contemporary abstract artist based in the United Kingdom. Original acrylic paintings exploring emotion, identity and the human spirit. Available to collect worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0A0A0A;--charcoal:#1A1A1A;--warm-white:#FAFAF6;--gold:#9E7B4E;--gold-lt:#C4A882;--grey:#666666;--rule:#2A2A2A}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--warm-white);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:20px;letter-spacing:0.12em;color:var(--warm-white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:40px;list-style:none}
+.nav-links a{font-family:'Cormorant SC',serif;font-size:11px;letter-spacing:0.2em;color:var(--grey);text-decoration:none;transition:color 0.3s}
+.nav-links a:hover{color:var(--warm-white)}
+.nav-links .nav-cta a{color:var(--gold);border:1px solid var(--gold);padding:8px 20px}
+.nav-links .nav-cta a:hover{background:var(--gold);color:var(--black)}
+.hero{position:relative;height:100vh;min-height:700px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.3) 0%,rgba(10,10,10,0.85) 100%),linear-gradient(to right,rgba(10,10,10,0.7) 0%,transparent 60%),url('https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg') center/cover no-repeat}
+.hero-content{position:relative;padding:0 48px 80px;max-width:680px}
+.hero-eyebrow{font-family:'Cormorant SC',serif;font-size:11px;letter-spacing:0.3em;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--gold)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,8vw,96px);font-weight:300;line-height:0.95;margin-bottom:32px}
+.hero-title em{font-style:italic;color:var(--gold-lt)}
+.hero-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(250,250,246,0.7);line-height:1.6;margin-bottom:48px;border-left:1px solid var(--gold);padding-left:20px}
+.hero-actions{display:flex;gap:20px;flex-wrap:wrap}
+.btn-primary{font-family:'Cormorant SC',serif;font-size:11px;letter-spacing:0.25em;padding:14px 36px;background:var(--gold);color:var(--black);text-decoration:none;transition:all 0.3s;display:inline-block}
+.btn-primary:hover{background:var(--gold-lt)}
+.btn-secondary{font-family:'Cormorant SC',serif;font-size:11px;letter-spacing:0.25em;padding:14px 36px;border:1px solid rgba(250,250,246,0.4);color:var(--warm-white);text-decoration:none;transition:all 0.3s;display:inline-block}
+.btn-secondary:hover{border-color:var(--warm-white)}
+.hero-scroll{position:absolute;bottom:40px;right:48px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Cormorant SC',serif;font-size:9px;letter-spacing:0.3em;color:var(--grey)}
+.hero-scroll::after{content:'';display:block;width:1px;height:60px;background:linear-gradient(to bottom,var(--grey),transparent);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(0.5);opacity:0.4}}
+section{padding:120px 48px}
+.section-eyebrow{font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.35em;color:var(--gold);margin-bottom:48px;display:flex;align-items:center;gap:16px}
+.section-eyebrow::after{content:'';flex:1;height:1px;background:var(--rule);max-width:200px}
+.featured{background:var(--black)}
+.featured-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;gap:40px;flex-wrap:wrap}
+.featured-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;line-height:1.1}
+.featured-intro{max-width:380px;color:var(--grey);font-size:14px;line-height:1.8}
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.work-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:var(--charcoal)}
+.work-card.wide{grid-column:span 2;aspect-ratio:unset}
+.work-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}
+.work-card:hover img{transform:scale(1.04)}
+.work-card::before{content:'';position:absolute;inset:16px;border:1px solid var(--gold);opacity:0;transition:opacity 0.4s;z-index:2;pointer-events:none}
+.work-card:hover::before{opacity:1}
+.work-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,transparent 50%);opacity:0;transition:opacity 0.4s;z-index:1;display:flex;align-items:flex-end;padding:28px}
+.work-card:hover .work-overlay{opacity:1}
+.work-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:4px;color:var(--warm-white)}
+.work-meta{font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.2em;color:var(--gold)}
+.collections{background:var(--charcoal)}
+.collections-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.collection-card{position:relative;overflow:hidden;height:480px;cursor:pointer;background:var(--black)}
+.collection-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.4s;filter:brightness(0.6)}
+.collection-card:hover img{transform:scale(1.04);filter:brightness(0.4)}
+.collection-card::before{content:'';position:absolute;inset:20px;border:1px solid var(--gold);opacity:0;transition:opacity 0.4s;z-index:2}
+.collection-card:hover::before{opacity:1}
+.collection-info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;z-index:1}
+.collection-number{font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.3em;color:var(--gold);margin-bottom:12px}
+.collection-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;margin-bottom:8px}
+.collection-tagline{font-size:13px;color:rgba(250,250,246,0.6);line-height:1.6;max-width:320px;transform:translateY(8px);opacity:0;transition:all 0.4s}
+.collection-card:hover .collection-tagline{opacity:1;transform:translateY(0)}
+.collection-link{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.25em;color:var(--gold);text-decoration:none;transform:translateY(8px);opacity:0;transition:all 0.4s 0.05s}
+.collection-card:hover .collection-link{opacity:1;transform:translateY(0)}
+.collection-link::after{content:'→';font-family:'Inter',sans-serif}
+.about-strip{background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+.about-image{position:relative;min-height:600px;overflow:hidden}
+.about-image img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.85)}
+.about-content{padding:100px 64px;display:flex;flex-direction:column;justify-content:center;background:var(--charcoal)}
+.about-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:300;line-height:1.15;margin-bottom:32px}
+.about-heading em{font-style:italic;color:var(--gold-lt)}
+.about-body{color:var(--grey);font-size:14px;line-height:1.9;margin-bottom:40px}
+.studio{background:var(--black);padding:80px 48px}
+.studio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px}
+.studio-photo{position:relative;overflow:hidden;aspect-ratio:3/4}
+.studio-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.7) saturate(0.8);transition:filter 0.4s}
+.studio-photo:hover img{filter:brightness(0.9) saturate(1)}
+.studio-caption{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(10,10,10,0.8),transparent);font-family:'Cormorant SC',serif;font-size:9px;letter-spacing:0.2em;color:var(--gold-lt)}
+.newsletter{background:var(--charcoal);text-align:center;padding:100px 48px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.newsletter-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;margin-bottom:16px}
+.newsletter-sub{color:var(--grey);font-size:14px;margin-bottom:48px}
+.newsletter-form{display:flex;max-width:480px;margin:0 auto}
+.newsletter-form input{flex:1;background:var(--black);border:1px solid var(--rule);border-right:none;padding:14px 20px;color:var(--warm-white);font-family:'Inter',sans-serif;font-size:14px;outline:none}
+.newsletter-form input::placeholder{color:var(--grey)}
+.newsletter-form input:focus{border-color:var(--gold)}
+.newsletter-form button{background:var(--gold);border:1px solid var(--gold);color:var(--black);padding:14px 28px;font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.25em;cursor:pointer;transition:background 0.3s}
+.newsletter-form button:hover{background:var(--gold-lt)}
+footer{background:var(--black);padding:64px 48px 40px}
+.footer-top{display:grid;grid-template-columns:1fr auto 1fr;gap:48px;align-items:start;padding-bottom:48px;border-bottom:1px solid var(--rule);margin-bottom:40px}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--grey);line-height:1.7;max-width:260px}
+.footer-links-col h4{font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.3em;color:var(--gold);margin-bottom:20px}
+.footer-links-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links-col a{color:var(--grey);text-decoration:none;font-size:13px;transition:color 0.3s}
+.footer-links-col a:hover{color:var(--warm-white)}
+.footer-social h4{font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.3em;color:var(--gold);margin-bottom:20px}
+.social-links{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.social-links a{color:var(--grey);text-decoration:none;font-size:13px;transition:color 0.3s}
+.social-links a:hover{color:var(--warm-white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--grey);gap:20px;flex-wrap:wrap}
+.footer-badge{display:flex;align-items:center;gap:8px;font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.2em;color:var(--gold)}
+.footer-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.announcement{background:var(--gold);color:var(--black);text-align:center;padding:10px 48px;font-family:'Cormorant SC',serif;font-size:10px;letter-spacing:0.3em}
+@media(max-width:900px){nav{padding:0 24px}.nav-links{gap:20px}section{padding:80px 24px}.hero-content{padding:0 24px 60px}.works-grid{grid-template-columns:1fr 1fr}.work-card.wide{grid-column:span 2}.collections-grid{grid-template-columns:1fr}.about-strip{grid-template-columns:1fr}.about-image{min-height:400px}.about-content{padding:60px 24px}.studio-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr}.social-links{align-items:flex-start}}
+@media(max-width:600px){.nav-links{display:none}.works-grid{grid-template-columns:1fr}.work-card.wide{grid-column:span 1}.hero-title{font-size:48px}.newsletter-form{flex-direction:column}.newsletter-form input{border-right:1px solid var(--rule);border-bottom:none}.studio-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="announcement">WORLDWIDE INSURED SHIPPING &nbsp;·&nbsp; CERTIFICATE OF AUTHENTICITY INCLUDED &nbsp;·&nbsp; COMMISSIONS WELCOME</div>
+<nav>
+<a href="#" class="nav-logo">Roma <span>Bankowski</span></a>
+<ul class="nav-links">
+<li><a href="#collections">Collections</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#studio">Studio</a></li>
+<li><a href="#">Portfolio</a></li>
+<li class="nav-cta"><a href="#">Acquire</a></li>
+</ul>
+</nav>
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="hero-eyebrow">Contemporary Abstract Art</div>
+<h1 class="hero-title">Roma<br><em>Bankowski</em></h1>
+<p class="hero-quote">"Art is my way of speaking.<br>My paintings reveal what is inside me.<br>My paintings are my voice."</p>
+<div class="hero-actions">
+<a href="#collections" class="btn-primary">Explore Collections</a>
+<a href="#about" class="btn-secondary">About the Artist</a>
+</div>
+</div>
+<div class="hero-scroll">Scroll</div>
+</section>
+<section class="featured" id="works">
+<div class="section-eyebrow fade-up">Selected Works</div>
+<div class="featured-header fade-up">
+<h2 class="featured-title">Original paintings,<br>each one unique.</h2>
+<p class="featured-intro">Every canvas is built in layers — acrylic, mixed media, texture and gesture. Each work is signed, varnished, and accompanied by a Certificate of Authenticity.</p>
+</div>
+<div class="works-grid fade-up">
+<div class="work-card wide">
+<img src="https://static.wixstatic.com/media/d3b226_a46be962dcde458e81eb920b065d36e6~mv2.jpg" alt="London Pulse" loading="lazy">
+<div class="work-overlay"><div class="work-info"><div class="work-title">London Pulse</div><div class="work-meta">Acrylic on Canvas &nbsp;·&nbsp; 80 × 60 cm &nbsp;·&nbsp; £1,450</div></div></div>
+</div>
+<div class="work-card">
+<img src="https://static.wixstatic.com/media/d3b226_956327b71e264b728b08ba561b398b60~mv2.jpeg" alt="Missing Earring" loading="lazy">
+<div class="work-overlay"><div class="work-info"><div class="work-title">Missing Earring</div><div class="work-meta">Acrylic on Canvas &nbsp;·&nbsp; 80 × 80 cm &nbsp;·&nbsp; £1,850</div></div></div>
+</div>
+<div class="work-card">
+<img src="https://static.wixstatic.com/media/d3b226_d3e73d6bb69b4434994ea3965346c16f~mv2.jpg" alt="Whiskey & Smoke" loading="lazy">
+<div class="work-overlay"><div class="work-info"><div class="work-title">Whiskey &amp; Smoke</div><div class="work-meta">Acrylic on Canvas &nbsp;·&nbsp; 60 × 80 cm &nbsp;·&nbsp; £1,650</div></div></div>
+</div>
+<div class="work-card">
+<img src="https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg" alt="Fragments of Becoming" loading="lazy">
+<div class="work-overlay"><div class="work-info"><div class="work-title">Fragments of Becoming</div><div class="work-meta">Acrylic &amp; Mixed Media &nbsp;·&nbsp; 100 × 70 cm &nbsp;·&nbsp; £1,640</div></div></div>
+</div>
+<div class="work-card">
+<img src="https://static.wixstatic.com/media/d3b226_628d6c3f52754f79ac30c8c242942b90~mv2.jpg" alt="Merlin Kiss" loading="lazy">
+<div class="work-overlay"><div class="work-info"><div class="work-title">Merlin Kiss</div><div class="work-meta">Acrylic &amp; Gold Leaf &nbsp;·&nbsp; £1,650</div></div></div>
+</div>
+</div>
+<div style="text-align:center;margin-top:64px" class="fade-up"><a href="#" class="btn-secondary">View All Works</a></div>
+</section>
+<section class="collections" id="collections">
+<div class="section-eyebrow fade-up">Four Collections</div>
+<div class="collections-grid fade-up">
+<div class="collection-card">
+<img src="https://static.wixstatic.com/media/d3b226_956327b71e264b728b08ba561b398b60~mv2.jpeg" alt="The Soul's Mirror" loading="lazy">
+<div class="collection-info"><div class="collection-number">01 &nbsp;/&nbsp; 04</div><h3 class="collection-name">The Soul's Mirror</h3><p class="collection-tagline">An unflinching exploration of the interior life — silence, suppression and the gaze turned inward.</p><a href="#" class="collection-link">Explore Collection</a></div>
+</div>
+<div class="collection-card">
+<img src="https://static.wixstatic.com/media/d3b226_d3e73d6bb69b4434994ea3965346c16f~mv2.jpg" alt="Strength & Beauty" loading="lazy">
+<div class="collection-info"><div class="collection-number">02 &nbsp;/&nbsp; 04</div><h3 class="collection-name">Strength &amp; Beauty</h3><p class="collection-tagline">Feminine power examined through elegance, solitude and the quiet theatre of private life.</p><a href="#" class="collection-link">Explore Collection</a></div>
+</div>
+<div class="collection-card">
+<img src="https://static.wixstatic.com/media/d3b226_a46be962dcde458e81eb920b065d36e6~mv2.jpg" alt="Colour & Freedom" loading="lazy">
+<div class="collection-info"><div class="collection-number">03 &nbsp;/&nbsp; 04</div><h3 class="collection-name">Colour &amp; Freedom</h3><p class="collection-tagline">Paint as pure liberation — identity fractured and remade through explosive colour and gesture.</p><a href="#" class="collection-link">Explore Collection</a></div>
+</div>
+<div class="collection-card">
+<img src="https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg" alt="Beyond the Surface" loading="lazy">
+<div class="collection-info"><div class="collection-number">04 &nbsp;/&nbsp; 04</div><h3 class="collection-name">Beyond the Surface</h3><p class="collection-tagline">Beneath every visible world lies another — landscape, motion and the unseen architecture of feeling.</p><a href="#" class="collection-link">Explore Collection</a></div>
+</div>
+</div>
+</section>
+<div class="about-strip" id="about">
+<div class="about-image"><img src="https://static.wixstatic.com/media/d3b226_1a7a8ffbb0fd4f6fae710e1e1a93b310~mv2.jpg" alt="Roma Bankowski in her studio"></div>
+<div class="about-content">
+<div class="section-eyebrow">About the Artist</div>
+<h2 class="about-heading">Roma<br><em>Bankowski</em><br>United Kingdom</h2>
+<p class="about-body">My creative journey is a continuous search for the invisible — a translation of internal emotions, fleeting thoughts and the raw energy of nature into a visual language of texture and colour.<br><br>I work primarily in acrylics and mixed media, building each canvas in multiple layers using palette knives, brushes and — when the work demands it — my hands.<br><br>I create work for collectors who understand that a painting is not decoration. It is a mirror, a conversation, a living presence in a room.</p>
+<a href="#" class="btn-primary">Read Full Statement</a>
+</div>
+</div>
+<section class="studio" id="studio">
+<div class="section-eyebrow fade-up">In the Studio</div>
+<h2 class="featured-title fade-up" style="margin-bottom:8px">Process is everything.</h2>
+<p style="color:var(--grey);font-size:14px" class="fade-up">Each painting begins as a physical act — hand, knife, canvas.</p>
+<div class="studio-grid fade-up">
+<div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_1a7a8ffbb0fd4f6fae710e1e1a93b310~mv2.jpg" alt="Studio" loading="lazy"><div class="studio-caption">Building the underpainting</div></div>
+<div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg" alt="Studio" loading="lazy"><div class="studio-caption">Texture &amp; mixed media</div></div>
+<div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_a46be962dcde458e81eb920b065d36e6~mv2.jpg" alt="Studio" loading="lazy"><div class="studio-caption">The palette knife</div></div>
+<div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_628d6c3f52754f79ac30c8c242942b90~mv2.jpg" alt="Studio" loading="lazy"><div class="studio-caption">Where hand meets canvas</div></div>
+</div>
+</section>
+<div class="newsletter fade-up">
+<h2 class="newsletter-title">Become a Collector.</h2>
+<p class="newsletter-sub">Early access to new collections and a behind-the-scenes look into the studio.</p>
+<form class="newsletter-form" onsubmit="return false">
+<input type="email" placeholder="Your email address">
+<button type="submit">Subscribe</button>
+</form>
+</div>
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a href="#" class="nav-logo">Roma <span>Bankowski</span></a>
+<p class="footer-tagline">"Art is my way of speaking.<br>My paintings are my voice."</p>
+</div>
+<div class="footer-links-col">
+<h4>Explore</h4>
+<ul>
+<li><a href="#">Original Paintings</a></li>
+<li><a href="#">Limited Edition Prints</a></li>
+<li><a href="#">Collections</a></li>
+<li><a href="#">Portfolio</a></li>
+<li><a href="#">About the Artist</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+<div class="footer-social">
+<h4>Follow</h4>
+<div class="social-links">
+<a href="https://www.instagram.com/romabankowskiart" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/share/1Fz7QTzA7y/" target="_blank">Facebook</a>
+<a href="https://youtube.com/@romabankowski" target="_blank">YouTube</a>
+<a href="https://www.tiktok.com/@romabankowskiart" target="_blank">TikTok</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div>© 2026 Roma Bankowski Art &nbsp;·&nbsp; United Kingdom &nbsp;·&nbsp; All Rights Reserved</div>
+<div class="footer-badge">Worldwide Insured Shipping</div>
+<div style="display:flex;gap:20px"><a href="#" style="color:var(--grey);text-decoration:none;font-size:12px">Privacy Policy</a><a href="#" style="color:var(--grey);text-decoration:none;font-size:12px">Terms &amp; Conditions</a></div>
+</div>
+</footer>
+<script>
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.borderBottomColor=window.scrollY>50?'rgba(158,123,78,0.2)':'var(--rule)'});
+</script>
+</body>
+</html>
