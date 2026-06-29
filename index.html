@@ -17,7 +17,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:23px;letter-spacing:0.1em;color:#FFFFFF;text-decoration:none}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
-.nav-links a{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.18em;color:#EEEEEE;text-decoration:none;transition:color 0.3s}
+.nav-links a{font-family:'Cormorant SC',serif;font-size:18px;letter-spacing:0.18em;color:#EEEEEE;text-decoration:none;transition:color 0.3s}
 .nav-links a:hover{color:#FFFFFF}
 .nav-links .nav-cta a{color:var(--gold-lt);border:1px solid var(--gold);padding:8px 20px;font-size:12px}
 .nav-links .nav-cta a:hover{background:var(--gold);color:#000}
@@ -25,7 +25,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero{position:relative;height:100vh;min-height:700px;display:flex;align-items:flex-end;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,0.3) 0%,rgba(10,10,10,0.85) 100%),linear-gradient(to right,rgba(10,10,10,0.7) 0%,transparent 60%),url('https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg') center/cover no-repeat}
 .hero-content{position:relative;padding:0 48px 80px;max-width:680px}
-.hero-eyebrow{font-family:'Cormorant SC',serif;font-size:15px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.hero-eyebrow{font-family:'Cormorant SC',serif;font-size:18px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:24px;display:flex;align-items:center;gap:16px}
 .hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--gold)}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,8vw,96px);font-weight:300;line-height:0.95;margin-bottom:32px;color:#FFFFFF}
 .hero-title em{font-style:italic;color:var(--gold-lt)}
@@ -33,18 +33,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-actions{display:flex;gap:20px;flex-wrap:wrap}
 .btn-primary{font-family:'Cormorant SC',serif;font-size:14px;letter-spacing:0.2em;padding:16px 42px;background:var(--gold);color:#000;text-decoration:none;transition:all 0.3s;display:inline-block}
 .btn-primary:hover{background:var(--gold-lt)}
-.btn-secondary{font-family:'Cormorant SC',serif;font-size:14px;letter-spacing:0.2em;padding:16px 42px;border:1px solid rgba(255,255,255,0.6);color:#FFFFFF;text-decoration:none;transition:all 0.3s;display:inline-block}
+.btn-secondary{font-family:'Cormorant SC',serif;font-size:14px;letter-spacing:0.2em;padding:18px 42px;border:1px solid rgba(255,255,255,0.6);color:#FFFFFF;text-decoration:none;transition:all 0.3s;display:inline-block}
 .btn-secondary:hover{border-color:#FFF}
 .hero-scroll{position:absolute;bottom:40px;right:48px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Cormorant SC',serif;font-size:9px;letter-spacing:0.3em;color:var(--grey)}
 .hero-scroll::after{content:'';display:block;width:1px;height:60px;background:linear-gradient(to bottom,var(--grey),transparent);animation:scrollLine 2s ease-in-out infinite}
 @keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(0.5);opacity:0.4}}
 section{padding:120px 48px}
-.section-eyebrow{font-family:'Cormorant SC',serif;font-size:14px;letter-spacing:0.22em;color:var(--gold-lt);margin-bottom:48px;display:flex;align-items:center;gap:16px}
+.section-eyebrow{font-family:'Cormorant SC',serif;font-size:18px;letter-spacing:0.22em;color:var(--gold-lt);margin-bottom:48px;display:flex;align-items:center;gap:16px}
 .section-eyebrow::after{content:'';flex:1;height:1px;background:var(--rule);max-width:200px}
 .featured{background:var(--black)}
 .featured-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;gap:40px;flex-wrap:wrap}
 .featured-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,62px);font-weight:300;line-height:1.1;color:#FFFFFF}
-.featured-intro{max-width:380px;color:#BBBBBB;font-size:16px;line-height:1.85}
+.featured-intro{max-width:380px;color:#BBBBBB;font-size:18px;line-height:1.85}
 .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .work-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:var(--charcoal)}
 .work-card.wide{grid-column:span 2;aspect-ratio:unset}
@@ -55,7 +55,7 @@ section{padding:120px 48px}
 .work-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.9) 0%,transparent 50%);opacity:0;transition:opacity 0.4s;z-index:1;display:flex;align-items:flex-end;padding:28px}
 .work-card:hover .work-overlay{opacity:1}
 .work-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:4px;color:#FFFFFF}
-.work-meta{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.18em;color:var(--gold-lt)}
+.work-meta{font-family:'Cormorant SC',serif;font-size:18px;letter-spacing:0.18em;color:var(--gold-lt)}
 .collections{background:var(--charcoal)}
 .collections-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .collection-card{position:relative;overflow:hidden;height:480px;cursor:pointer;background:var(--black)}
@@ -86,7 +86,7 @@ section{padding:120px 48px}
 .studio-caption{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(10,10,10,0.8),transparent);font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.18em;color:var(--gold-lt)}
 .newsletter{background:var(--charcoal);text-align:center;padding:100px 48px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .newsletter-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,50px);font-weight:300;margin-bottom:16px;color:#FFFFFF}
-.newsletter-sub{color:#BBBBBB;font-size:16px;margin-bottom:48px}
+.newsletter-sub{color:#BBBBBB;font-size:18px;margin-bottom:48px}
 .newsletter-form{display:flex;max-width:480px;margin:0 auto}
 .newsletter-form input{flex:1;background:var(--black);border:1px solid var(--rule);border-right:none;padding:14px 20px;color:#FFF;font-family:'Inter',sans-serif;font-size:14px;outline:none}
 .newsletter-form input::placeholder{color:var(--grey)}
@@ -97,18 +97,18 @@ footer{background:var(--black);padding:64px 48px 40px}
 .footer-top{display:grid;grid-template-columns:1fr auto 1fr;gap:48px;align-items:start;padding-bottom:48px;border-bottom:1px solid var(--rule);margin-bottom:40px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;letter-spacing:0.1em;color:#FFFFFF;text-decoration:none;display:block;margin-bottom:16px}
 .footer-logo span{color:var(--gold)}
-.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#AAAAAA;line-height:1.7;max-width:260px}
-.footer-col h4{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:20px}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#AAAAAA;line-height:1.7;max-width:260px}
+.footer-col h4{font-family:'Cormorant SC',serif;font-size:18px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:20px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
-.footer-col a{color:#BBBBBB;text-decoration:none;font-size:15px;transition:color 0.3s}
+.footer-col a{color:#BBBBBB;text-decoration:none;font-size:18px;transition:color 0.3s}
 .footer-col a:hover{color:#FFFFFF}
 .footer-social{text-align:right}
-.footer-social h4{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:20px}
+.footer-social h4{font-family:'Cormorant SC',serif;font-size:18px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:20px}
 .social-links{display:flex;flex-direction:column;gap:11px;align-items:flex-end}
-.social-links a{color:#BBBBBB;text-decoration:none;font-size:15px;transition:color 0.3s}
+.social-links a{color:#BBBBBB;text-decoration:none;font-size:18px;transition:color 0.3s}
 .social-links a:hover{color:#FFFFFF}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#999999;gap:20px;flex-wrap:wrap}
-.footer-badge{display:flex;align-items:center;gap:8px;font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.18em;color:var(--gold-lt)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:18px;color:#999999;gap:20px;flex-wrap:wrap}
+.footer-badge{display:flex;align-items:center;gap:8px;font-family:'Cormorant SC',serif;font-size:18px;letter-spacing:0.18em;color:var(--gold-lt)}
 .footer-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
@@ -178,7 +178,7 @@ footer{background:var(--black);padding:64px 48px 40px}
 <section class="studio" id="studio">
 <div class="section-eyebrow fade-up">In the Studio</div>
 <h2 class="featured-title fade-up" style="margin-bottom:8px">Process is everything.</h2>
-<p style="color:#BBBBBB;font-size:16px" class="fade-up">Each painting begins as a physical act — hand, knife, canvas.</p>
+<p style="color:#BBBBBB;font-size:18px" class="fade-up">Each painting begins as a physical act — hand, knife, canvas.</p>
 <div class="studio-grid fade-up">
 <div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_1a7a8ffbb0fd4f6fae710e1e1a93b310~mv2.jpg" alt="Studio" loading="lazy"><div class="studio-caption">Building the underpainting</div></div>
 <div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg" alt="Studio" loading="lazy"><div class="studio-caption">Texture &amp; mixed media</div></div>
@@ -223,7 +223,7 @@ footer{background:var(--black);padding:64px 48px 40px}
 <div class="footer-bottom">
 <div>© 2026 Roma Bankowski Art &nbsp;·&nbsp; United Kingdom &nbsp;·&nbsp; All Rights Reserved</div>
 <div class="footer-badge">Worldwide Insured Shipping</div>
-<div style="display:flex;gap:20px"><a href="#" style="color:#777;text-decoration:none;font-size:13px">Privacy Policy</a><a href="#" style="color:#777;text-decoration:none;font-size:13px">Terms &amp; Conditions</a></div>
+<div style="display:flex;gap:20px"><a href="#" style="color:#777;text-decoration:none;font-size:18px">Privacy Policy</a><a href="#" style="color:#777;text-decoration:none;font-size:18px">Terms &amp; Conditions</a></div>
 </div>
 </footer>
 <script>
