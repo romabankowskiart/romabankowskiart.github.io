@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections — Roma Bankowski Art</title>
+<meta name="description" content="Four collections of original abstract paintings by Roma Bankowski. The Soul's Mirror, Strength & Beauty, Silents, Whispers of Nature & Light.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0A0A0A;--charcoal:#1A1A1A;--warm-white:#FAFAF6;--gold:#B8922A;--gold-lt:#D4AE50;--grey:#888888;--rule:#2A2A2A}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--warm-white);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:23px;letter-spacing:0.1em;color:#FFFFFF;text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.18em;color:#EEEEEE;text-decoration:none;transition:color 0.3s}
+.nav-links a:hover,.nav-links a.active{color:#FFFFFF}
+.nav-links .nav-cta a{color:var(--gold-lt);border:1px solid var(--gold);padding:8px 20px;font-size:12px}
+.nav-links .nav-cta a:hover{background:var(--gold);color:#000}
+.nav-burger{display:none;background:none;border:none;color:#FFF;font-size:22px;cursor:pointer}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+.page-hero{padding:160px 48px 64px}
+.page-hero-eyebrow{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.3em;color:var(--gold-lt);margin-bottom:20px}
+.page-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.5vw,76px);font-weight:300;line-height:0.95;margin-bottom:20px;color:#FFFFFF}
+.page-hero-title em{font-style:italic;color:var(--gold-lt)}
+.page-hero-sub{color:#AAAAAA;font-size:15px;line-height:1.8;max-width:600px}
+
+.collection-section{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.collection-section.reverse{direction:rtl}
+.collection-section.reverse>*{direction:ltr}
+.collection-image{position:relative;overflow:hidden;min-height:500px}
+.collection-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);filter:brightness(0.78)}
+.collection-section:hover .collection-image img{transform:scale(1.04);filter:brightness(0.65)}
+.collection-content{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;background:var(--charcoal)}
+.collection-number{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.32em;color:var(--gold-lt);margin-bottom:16px}
+.collection-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.2vw,54px);font-weight:300;line-height:1.05;margin-bottom:20px;color:#FFFFFF}
+.collection-title em{font-style:italic;color:var(--gold-lt)}
+.collection-rule{width:40px;height:1px;background:var(--gold);margin-bottom:24px}
+.collection-desc{color:#AAAAAA;font-size:15px;line-height:1.85;margin-bottom:16px}
+.collection-works{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.2em;color:var(--gold-lt);margin-bottom:36px}
+.btn-gold{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.2em;padding:12px 28px;border:1px solid var(--gold);color:var(--gold-lt);text-decoration:none;transition:all 0.3s;display:inline-block}
+.btn-gold:hover{background:var(--gold);color:#000}
+
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:32px}
+.mini-thumb{aspect-ratio:1;overflow:hidden;position:relative}
+.mini-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.mini-thumb:hover img{transform:scale(1.08)}
+.mini-thumb::before{content:'';position:absolute;inset:6px;border:1px solid var(--gold);opacity:0;transition:opacity 0.3s;z-index:1}
+.mini-thumb:hover::before{opacity:1}
+
+footer{background:var(--black);padding:64px 48px 40px;border-top:1px solid var(--rule)}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);margin-bottom:40px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;color:#FFFFFF;text-decoration:none;display:block;margin-bottom:16px}
+.footer-logo span{color:var(--gold)}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#777;line-height:1.7}
+.footer-col h4{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-col a{color:#999;text-decoration:none;font-size:14px;transition:color 0.3s}
+.footer-col a:hover{color:#FFFFFF}
+.footer-bottom{display:flex;justify-content:space-between;font-size:12px;color:#666;flex-wrap:wrap;gap:16px}
+
+@media(max-width:900px){nav{padding:0 24px}.nav-burger{display:block}.nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(10,10,10,0.99);flex-direction:column;padding:32px;gap:24px;border-bottom:1px solid var(--rule)}.nav-links.open{display:flex}.page-hero{padding:140px 24px 48px}.collection-section{grid-template-columns:1fr}.collection-section.reverse{direction:ltr}.collection-image{min-height:350px}.collection-content{padding:48px 24px}.footer-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Roma <span>Bankowski</span></a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collections.html" class="active">Collections</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="contact.html">Acquire</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero fade-up">
+  <div class="page-hero-eyebrow">The Work</div>
+  <h1 class="page-hero-title">Four <em>Collections.</em></h1>
+  <p class="page-hero-sub">Each collection is a distinct chapter — a different territory of the inner life, explored through texture, colour and gesture.</p>
+</div>
+
+<!-- THE SOUL'S MIRROR -->
+<div class="collection-section" id="souls-mirror">
+  <div class="collection-image">
+    <img src="https://static.wixstatic.com/media/d3b226_431b70a92adb46f59f9f84aec6f2322c~mv2.jpg" alt="The Soul's Mirror">
+  </div>
+  <div class="collection-content fade-up">
+    <div class="collection-number">Collection 01</div>
+    <h2 class="collection-title">The Soul's<br><em>Mirror</em></h2>
+    <div class="collection-rule"></div>
+    <p class="collection-desc">An unflinching exploration of the interior life — silence, suppression and the gaze turned inward. These works examine what we hide, what we carry, and the moment our internal strength becomes our greatest trap.</p>
+    <p class="collection-desc">Rendered in deep darks and urgent reds, each portrait confronts the viewer as directly as it confronts its subject.</p>
+    <div class="collection-works">6 original works · From £459</div>
+    <a href="shop.html#souls-mirror" class="btn-gold">View Works &amp; Prices</a>
+    <div class="mini-grid">
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_6c020882729c4abaa8d92736c8983735~mv2.jpeg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_d3e73d6bb69b4434994ea3965346c16f~mv2.jpg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_357ac576df214a2680a94ed51b27b28c~mv2.jpg" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<!-- STRENGTH AND BEAUTY -->
+<div class="collection-section reverse" id="strength-beauty">
+  <div class="collection-image">
+    <img src="https://static.wixstatic.com/media/d3b226_956327b71e264b728b08ba561b398b60~mv2.jpeg" alt="Strength & Beauty">
+  </div>
+  <div class="collection-content fade-up">
+    <div class="collection-number">Collection 02</div>
+    <h2 class="collection-title">Strength<br><em>&amp; Beauty</em></h2>
+    <div class="collection-rule"></div>
+    <p class="collection-desc">Feminine power examined through elegance, solitude and the quiet theatre of private life. Women alone with their thoughts — unapologetic, self-possessed, and beautifully present.</p>
+    <p class="collection-desc">These paintings celebrate the interior life of women — not as they are seen, but as they are.</p>
+    <div class="collection-works">7 original works · From £680</div>
+    <a href="shop.html#strength-beauty" class="btn-gold">View Works &amp; Prices</a>
+    <div class="mini-grid">
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_628d6c3f52754f79ac30c8c242942b90~mv2.jpg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_613a04243ea5455984f4c9f5cfbb1be7~mv2.jpg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_830cfcb2078147c39e61b9d13a5db52b~mv2.jpg" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<!-- SILENTS -->
+<div class="collection-section" id="silents">
+  <div class="collection-image">
+    <img src="https://static.wixstatic.com/media/d3b226_72945ce86a9d476dafd0a61bbe158089~mv2.jpg" alt="Silents">
+  </div>
+  <div class="collection-content fade-up">
+    <div class="collection-number">Collection 03</div>
+    <h2 class="collection-title">Silents</h2>
+    <div class="collection-rule"></div>
+    <p class="collection-desc">A meditation on stillness, solitude and the spaces between words. These works invite the viewer to pause — to find comfort in the absence of noise and the beauty of quiet contemplation.</p>
+    <p class="collection-desc">From intimate monochrome studies to the breath-taking scale of "Longing for Light", this collection moves through every register of silence.</p>
+    <div class="collection-works">5 original works · From £192</div>
+    <a href="shop.html#silents" class="btn-gold">View Works &amp; Prices</a>
+    <div class="mini-grid">
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_69f052061d2849a09fabc4e01edb16e5~mv2.jpeg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_199bae72db6c44429acbaa62c462fdf9~mv2.jpg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_45a85a17b6144b11b4cd21729c5d861f~mv2.jpg" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHISPERS OF NATURE & LIGHT -->
+<div class="collection-section reverse" id="whispers-nature">
+  <div class="collection-image">
+    <img src="https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg" alt="Whispers of Nature & Light">
+  </div>
+  <div class="collection-content fade-up">
+    <div class="collection-number">Collection 04</div>
+    <h2 class="collection-title">Whispers of<br><em>Nature &amp; Light</em></h2>
+    <div class="collection-rule"></div>
+    <p class="collection-desc">Beneath every visible world lies another — landscape, motion and the unseen architecture of feeling. These works move between the figurative and the abstract, between earth and sky, city and nature.</p>
+    <p class="collection-desc">Built in layers of acrylic and mixed media, each canvas rewards close looking — there is always more beneath what is first seen.</p>
+    <div class="collection-works">7 original works · From £260</div>
+    <a href="shop.html#whispers-nature" class="btn-gold">View Works &amp; Prices</a>
+    <div class="mini-grid">
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_a46be962dcde458e81eb920b065d36e6~mv2.jpg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_3834c91101774be59af76d61664857b1~mv2.jpg" alt=""></div>
+      <div class="mini-thumb"><img src="https://static.wixstatic.com/media/d3b226_48dc17ce0048495ea1b253fafde7b689~mv2.jpg" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="footer-logo">Roma <span>Bankowski</span></a>
+      <p class="footer-tagline">"Art is my way of speaking.<br>My paintings are my voice."</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="shop.html">Original Paintings</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="about.html">About the Artist</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/romabankowskiart" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/share/1Fz7QTzA7y/" target="_blank">Facebook</a></li>
+        <li><a href="https://youtube.com/@romabankowski" target="_blank">YouTube</a></li>
+        <li><a href="https://www.tiktok.com/@romabankowskiart" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Roma Bankowski Art · United Kingdom · All Rights Reserved</div>
+    <div style="font-family:'Cormorant SC',serif;font-size:11px;letter-spacing:0.18em;color:var(--gold-lt)">Worldwide Insured Shipping</div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
