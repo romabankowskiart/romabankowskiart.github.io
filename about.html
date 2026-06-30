@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Roma Bankowski Art</title>
+<meta name="description" content="Roma Bankowski is a contemporary abstract artist based in the United Kingdom, trained at the Academy of Fine Arts in Łódź, Poland. Read her artist statement and biography.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#0A0A0A;--charcoal:#1A1A1A;--warm-white:#FAFAF6;--gold:#B8922A;--gold-lt:#D4AE50;--grey:#888888;--rule:#2A2A2A}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--warm-white);font-family:'Inter',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(10,10,10,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:23px;letter-spacing:0.1em;color:#FFFFFF;text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.18em;color:#EEEEEE;text-decoration:none;transition:color 0.3s}
+.nav-links a:hover,.nav-links a.active{color:#FFFFFF}
+.nav-links .nav-cta a{color:var(--gold-lt);border:1px solid var(--gold);padding:8px 20px;font-size:12px}
+.nav-links .nav-cta a:hover{background:var(--gold);color:#000}
+.nav-burger{display:none;background:none;border:none;color:#FFF;font-size:22px;cursor:pointer}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.btn-primary{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.2em;padding:14px 36px;background:var(--gold);color:#000;text-decoration:none;transition:all 0.3s;display:inline-block}
+.btn-primary:hover{background:var(--gold-lt)}
+.btn-gold{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.2em;padding:12px 28px;border:1px solid var(--gold);color:var(--gold-lt);text-decoration:none;transition:all 0.3s;display:inline-block}
+.btn-gold:hover{background:var(--gold);color:#000}
+
+.about-hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:72px}
+.about-hero-image{position:relative;overflow:hidden}
+.about-hero-image img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.82)}
+.about-hero-content{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;background:var(--charcoal)}
+.eyebrow{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.3em;color:var(--gold-lt);margin-bottom:24px}
+.about-name{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6vw,76px);font-weight:300;line-height:0.95;margin-bottom:20px;color:#FFFFFF}
+.about-name em{font-style:italic;color:var(--gold-lt)}
+.about-meta{font-family:'Cormorant SC',serif;font-size:13px;letter-spacing:0.12em;color:#999;margin-bottom:32px}
+.about-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(255,255,255,0.8);line-height:1.65;border-left:1px solid var(--gold);padding-left:20px;margin-bottom:40px}
+
+.statement{padding:100px 48px;max-width:900px;margin:0 auto}
+.statement h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;margin-bottom:48px;color:#FFFFFF}
+.statement h2 em{font-style:italic;color:var(--gold-lt)}
+.statement p{color:#AAAAAA;font-size:15px;line-height:1.9;margin-bottom:24px}
+.statement p strong{color:#FFFFFF;font-weight:400}
+.rule{width:100%;height:1px;background:var(--rule);margin:48px 0}
+
+.cv{padding:0 48px 100px;max-width:900px;margin:0 auto}
+.cv h3{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.28em;color:var(--gold-lt);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.cv-item{display:grid;grid-template-columns:80px 1fr;gap:24px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+.cv-year{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.1em;color:var(--gold-lt)}
+.cv-detail{font-size:14px;color:#AAAAAA;line-height:1.7}
+.cv-detail strong{color:#FFFFFF;font-weight:400;display:block;margin-bottom:4px}
+
+.studio-strip{background:var(--charcoal);padding:80px 48px}
+.studio-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;margin-bottom:8px;color:#FFFFFF}
+.studio-strip p{color:#AAAAAA;font-size:15px;margin-bottom:48px}
+.studio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.studio-photo{position:relative;overflow:hidden;aspect-ratio:3/4}
+.studio-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.7);transition:filter 0.4s}
+.studio-photo:hover img{filter:brightness(0.9)}
+.studio-caption{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(10,10,10,0.8),transparent);font-family:'Cormorant SC',serif;font-size:11px;letter-spacing:0.18em;color:var(--gold-lt)}
+
+footer{background:var(--black);padding:64px 48px 40px;border-top:1px solid var(--rule)}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);margin-bottom:40px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;color:#FFFFFF;text-decoration:none;display:block;margin-bottom:16px}
+.footer-logo span{color:var(--gold)}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#777;line-height:1.7}
+.footer-col h4{font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.25em;color:var(--gold-lt);margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-col a{color:#999;text-decoration:none;font-size:14px;transition:color 0.3s}
+.footer-col a:hover{color:#FFFFFF}
+.footer-bottom{display:flex;justify-content:space-between;font-size:12px;color:#666;flex-wrap:wrap;gap:16px}
+
+@media(max-width:900px){nav{padding:0 24px}.nav-burger{display:block}.nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(10,10,10,0.99);flex-direction:column;padding:32px;gap:24px;border-bottom:1px solid var(--rule)}.nav-links.open{display:flex}.about-hero{grid-template-columns:1fr;padding-top:72px}.about-hero-image{min-height:400px}.about-hero-content{padding:48px 24px}.statement,.cv{padding:60px 24px}.studio-strip{padding:60px 24px}.studio-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr}.cv-item{grid-template-columns:60px 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Roma <span>Bankowski</span></a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="collections.html">Collections</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="contact.html">Acquire</a></li>
+  </ul>
+</nav>
+
+<div class="about-hero">
+  <div class="about-hero-image">
+    <img src="https://static.wixstatic.com/media/d3b226_1a7a8ffbb0fd4f6fae710e1e1a93b310~mv2.jpg" alt="Roma Bankowski">
+  </div>
+  <div class="about-hero-content fade-up">
+    <div class="eyebrow">About the Artist</div>
+    <h1 class="about-name">Roma<br><em>Bankowski</em></h1>
+    <div class="about-meta">Born 1983, Poland &nbsp;·&nbsp; Based in the United Kingdom</div>
+    <p class="about-quote">"Art is my way of speaking. My paintings reveal what is inside me. My paintings are my voice."</p>
+    <a href="contact.html" class="btn-primary">Get in Touch</a>
+  </div>
+</div>
+
+<div class="statement fade-up">
+  <h2>Artist <em>Statement</em></h2>
+  <p>My name is Roma Bankowski. Born in Poland in 1983, I trained at the Academy of Fine Arts in Łódź, where I developed the technical foundations that still shape my practice today. I am now a contemporary abstract artist based in the United Kingdom.</p>
+  <p>My art is a collection of contemporary abstract works — an expressive exploration of colour and texture. Each piece delves into the depths of human emotion, memory, and shared experience, capturing what is often felt but rarely seen. <strong>I believe that abstract art is a bridge between the artist's inner world and the viewer's soul.</strong></p>
+  <p>My creative journey is a continuous search for the invisible — a translation of internal emotions, fleeting thoughts, and the raw energy of nature into a visual language of texture and colour. For me, <strong>abstract art is the ultimate form of honesty.</strong></p>
+  <p>Each collection represents a different chapter of my internal dialogue. In "The Soul's Mirror", I examine silence and suppression — what we carry that we cannot say. In "Strength &amp; Beauty", I explore the private theatre of feminine experience — women as they are, not as they are seen. "Silents" is a meditation on stillness and solitude, while "Whispers of Nature &amp; Light" moves between the figurative and the abstract, between earth and sky.</p>
+  <p>Using acrylics, oils and mixed media, I build my canvases layer by layer, much like we build our own experiences. I work with palette knives, brushes, and when the work demands it, my hands. The process is physical, intuitive and deeply personal. Each layer is a decision; each mark is a commitment.</p>
+  <p>My work has been shown across exhibitions in Poland and the United Kingdom, and featured on international art platforms including Dark Art Movement and Macabre Gallery, where my distinctive abstract style has gained recognition. My piece "Longing for Light" has been particularly well received for its emotional depth.</p>
+  <p>My mission is to create art that resonates with your personal story. I want my paintings to be more than objects on a wall — I want them to be a source of strength, a whisper of peace, and a mirror to your own beautiful, unseen world. <strong>My paintings are meant to be lived with.</strong></p>
+  <div class="rule"></div>
+  <a href="collections.html" class="btn-gold">Explore the Collections</a>
+</div>
+
+<div class="cv fade-up">
+  <h3>Exhibitions</h3>
+
+  <div class="cv-item">
+    <div class="cv-year">2026</div>
+    <div class="cv-detail">
+      <strong>Group Exhibition — Cambridge, United Kingdom</strong>
+      Group show of contemporary works, Cambridge art community.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2026</div>
+    <div class="cv-detail">
+      <strong>Group Exhibition — Sawbridgeworth, United Kingdom</strong>
+      Continued presence within the local British contemporary art community.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2026</div>
+    <div class="cv-detail">
+      <strong>Group Exhibition — Gilberd Gallery, Harlow, United Kingdom</strong>
+      Group show with fellow contemporary artists.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2025</div>
+    <div class="cv-detail">
+      <strong>Group Exhibition — Sawbridgeworth &amp; Bishop's Stortford, United Kingdom</strong>
+      Showcasing recent abstract works within the local British contemporary art community.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2025</div>
+    <div class="cv-detail">
+      <strong>Anatomy of Relationships — Szyb Wilson Art Gallery, Katowice, Poland</strong>
+      Group exhibition exploring the invisible bonds between individuals through abstract forms.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2025</div>
+    <div class="cv-detail">
+      <strong>Global Horizons: A Celebration of Artistic Expression — ArtioGallery</strong>
+      International virtual group exhibition bridging cultural boundaries through shared emotional language.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2025</div>
+    <div class="cv-detail">
+      <strong>Feminine Energy — Goddess Arts Gallery</strong>
+      Virtual group exhibition dedicated to the power and creative force of the feminine spirit.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2024</div>
+    <div class="cv-detail">
+      <strong>"Art is My Voice" — Fusy Coffee &amp; Art, Włocławek, Poland</strong>
+      Solo exhibition. A deeply personal show where abstract forms become a medium for communication.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2024</div>
+    <div class="cv-detail">
+      <strong>Group Exhibition — Sawbridgeworth, United Kingdom</strong>
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2009</div>
+    <div class="cv-detail">
+      <strong>Elements (Żywioły) — Space for Art, Włocławek, Poland</strong>
+      Debut solo exhibition exploring the raw energy and power of the natural elements.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2003</div>
+    <div class="cv-detail">
+      <strong>Group Exhibition — Contemporary Art Gallery, Włocławek, Poland</strong>
+    </div>
+  </div>
+
+  <h3 style="margin-top:48px">Education</h3>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Academy of Fine Arts, Łódź, Poland</strong>
+      Formal training in painting and fine art, where I developed the technical and conceptual foundations of my current practice.
+    </div>
+  </div>
+
+  <h3 style="margin-top:48px">Charity &amp; Community</h3>
+  <div class="cv-item">
+    <div class="cv-year">2025</div>
+    <div class="cv-detail">
+      <strong>"I'm a Legend" — Hospice Charity Auction</strong>
+      Original painting donated and sold at charity auction in support of hospice care.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2025</div>
+    <div class="cv-detail">
+      <strong>"The Mask That We Wear" — Kennedy Street Recovery</strong>
+      Original painting donated to support Kennedy Street Recovery's work in addiction recovery.
+    </div>
+  </div>
+
+  <h3 style="margin-top:48px">Practice</h3>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Studio Practice</strong>
+      Working from a dedicated studio in the United Kingdom. Primary media: acrylic, oil, mixed media, gold leaf on canvas.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Commissions</strong>
+      Bespoke commissions accepted. Please contact to discuss your requirements.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year">2026</div>
+    <div class="cv-detail">
+      <strong>Gallery Representation</strong>
+      Currently in conversation with London galleries regarding representation. Portfolio available on request.
+    </div>
+  </div>
+</div>
+
+<div class="cv fade-up" style="padding-top:0">
+  <h3 style="margin-top:0">Collaborations &amp; Platforms</h3>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Saatchi Art</strong>
+      My work is available through Saatchi Art, one of the world's leading online galleries for contemporary art.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Dark Art Movement &amp; Macabre Gallery</strong>
+      My work has been featured on these international art platforms, where my distinctive abstract style has gained recognition.
+    </div>
+  </div>
+
+  <h3 style="margin-top:48px">Contact &amp; Collaborations</h3>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Art Sales</strong>
+      Enquiries for original abstract paintings always welcome.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Collaborations</strong>
+      Open to artistic partnerships and creative projects.
+    </div>
+  </div>
+  <div class="cv-item">
+    <div class="cv-year"></div>
+    <div class="cv-detail">
+      <strong>Exhibitions</strong>
+      Available for gallery shows and art events worldwide.
+    </div>
+  </div>
+</div>
+
+<div class="studio-strip fade-up">
+  <h2>In the Studio</h2>
+  <p>Process is everything. Each painting begins as a physical act.</p>
+  <div class="studio-grid">
+    <div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_1a7a8ffbb0fd4f6fae710e1e1a93b310~mv2.jpg" alt="Studio"><div class="studio-caption">Building the underpainting</div></div>
+    <div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_dc826646f82b4eb2aecce58368a62fab~mv2.jpeg" alt="Studio"><div class="studio-caption">Texture &amp; mixed media</div></div>
+    <div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_a46be962dcde458e81eb920b065d36e6~mv2.jpg" alt="Studio"><div class="studio-caption">The palette knife</div></div>
+    <div class="studio-photo"><img src="https://static.wixstatic.com/media/d3b226_628d6c3f52754f79ac30c8c242942b90~mv2.jpg" alt="Studio"><div class="studio-caption">Where hand meets canvas</div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="footer-logo">Roma <span>Bankowski</span></a>
+      <p class="footer-tagline">"Art is my way of speaking.<br>My paintings are my voice."</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="shop.html">Original Paintings</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="about.html">About the Artist</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/romabankowskiart" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/share/1Fz7QTzA7y/" target="_blank">Facebook</a></li>
+        <li><a href="https://youtube.com/@romabankowski" target="_blank">YouTube</a></li>
+        <li><a href="https://www.tiktok.com/@romabankowskiart" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Roma Bankowski Art · United Kingdom · All Rights Reserved</div>
+    <div style="font-family:'Cormorant SC',serif;font-size:11px;letter-spacing:0.18em;color:var(--gold-lt)">Worldwide Insured Shipping</div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
