@@ -114,7 +114,10 @@ footer{background:var(--black);padding:64px 48px 40px;border-top:1px solid var(-
 
   <div class="contact-right fade-up">
     <h2>Send an Enquiry</h2>
-    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form id="contactForm" action="https://formsubmit.co/romabankowskiart@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Enquiry — romabankowskiart.com">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
       <div class="form-group">
         <label>Your Name</label>
         <input type="text" name="name" placeholder="Full name" required>
@@ -179,12 +182,6 @@ footer{background:var(--black);padding:64px 48px 40px;border-top:1px solid var(-
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  document.getElementById('successMsg').style.display='block';
-  this.reset();
-  setTimeout(()=>{document.getElementById('successMsg').style.display='none'},5000);
-});
 </script>
 </body>
 </html>
