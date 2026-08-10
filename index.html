@@ -93,6 +93,7 @@ section{padding:120px 48px}
 .newsletter-form input:focus{border-color:var(--gold)}
 .newsletter-form button{background:var(--gold);border:1px solid var(--gold);color:#000;padding:14px 28px;font-family:'Cormorant SC',serif;font-size:12px;letter-spacing:0.22em;cursor:pointer;transition:background 0.3s}
 .newsletter-form button:hover{background:var(--gold-lt)}
+.newsletter-note{color:#777;font-size:12px;margin-top:14px}
 footer{background:var(--black);padding:64px 48px 40px}
 .footer-top{display:grid;grid-template-columns:1fr auto 1fr;gap:48px;align-items:start;padding-bottom:48px;border-bottom:1px solid var(--rule);margin-bottom:40px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;letter-spacing:0.1em;color:#FFFFFF;text-decoration:none;display:block;margin-bottom:16px}
@@ -189,10 +190,14 @@ footer{background:var(--black);padding:64px 48px 40px}
 <div class="newsletter fade-up">
 <h2 class="newsletter-title">Become a Collector.</h2>
 <p class="newsletter-sub">Early access to new collections and a behind-the-scenes look into the studio.</p>
-<form class="newsletter-form" onsubmit="return false">
-<input type="email" placeholder="Your email address">
+<form class="newsletter-form" action="https://formsubmit.co/romabankowskiart@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New Newsletter Signup — romabankowskiart.com">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://romabankowskiart.github.io/index.html">
+<input type="email" name="email" placeholder="Your email address" required>
 <button type="submit">Subscribe</button>
 </form>
+<p class="newsletter-note">Note: first-time sign-up requires one-time confirmation email from FormSubmit — same as the contact form.</p>
 </div>
 <footer>
 <div class="footer-top">
@@ -223,7 +228,7 @@ footer{background:var(--black);padding:64px 48px 40px}
 <div class="footer-bottom">
 <div>© 2026 Roma Bankowski Art &nbsp;·&nbsp; United Kingdom &nbsp;·&nbsp; All Rights Reserved</div>
 <div class="footer-badge">Worldwide Insured Shipping</div>
-<div style="display:flex;gap:20px"><a href="#" style="color:#777;text-decoration:none;font-size:18px">Privacy Policy</a><a href="#" style="color:#777;text-decoration:none;font-size:18px">Terms &amp; Conditions</a></div>
+<div style="display:flex;gap:20px"><a href="privacy.html" style="color:#777;text-decoration:none;font-size:18px">Privacy Policy</a><a href="terms.html" style="color:#777;text-decoration:none;font-size:18px">Terms &amp; Conditions</a></div>
 </div>
 </footer>
 <script>
