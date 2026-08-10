@@ -182,6 +182,16 @@ footer{background:var(--black);padding:64px 48px 40px;border-top:1px solid var(-
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// Pre-fill subject and message when arriving from a "Enquire" button on the Shop page
+const params = new URLSearchParams(window.location.search);
+const painting = params.get('painting');
+if (painting) {
+  const subjectSelect = document.querySelector('select[name="subject"]');
+  const messageBox = document.querySelector('textarea[name="message"]');
+  if (subjectSelect) subjectSelect.value = 'acquire';
+  if (messageBox) messageBox.value = `Hi Roma, I'm interested in "${painting}". Could you tell me more about availability and next steps?`;
+}
 </script>
 </body>
 </html>
